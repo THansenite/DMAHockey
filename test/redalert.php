@@ -97,101 +97,57 @@
 					<div id="content">
 						<div id="box1">
 
-<h1>2014-15 Team Standings</h1>
+<h1>Red Alert</h1>
 <hr />
 <br />
 <table id="standings" align="center" width="90%">
 <thead>
 	<tr>
-		<th>Team</th>
-		<th>GP</th>
-		<th>Wins</th>
-		<th>Losses</th>
-		<th>SOL</th>
-		<th>Pts</th>
-		<th>GF</th>
-		<th>GA</th>
+		<th align="left">First</th>
+		<th align="left">Last</th>
+		<th>Goals</th>
+		<th>Assists</th>
+		<th>Points</th>
+		<th>PM</th>
 	</tr>
 </thead>
 <tbody>
 <?php
 	include ("common/db_setup.php");
 	$connection = mysqli_connect($server, $username, $password, $database) or die ("Connection failed");
-	$query = "select t.name, 
-			(select count(*) from game 
-				join schedule on game.id = schedule.id 
-				where schedule.home=1 or schedule.away=1) as 'GP', 
-			(select count(*) from game as g 
-				join schedule as s on g.id = s.id 
-				where (t.id = s.home and g.home_score > g.away_score) 
-					or (t.id = s.away and g.home_score < g. away_score) 
-					or (t.id = s.home and g.special_case = 'A_SOL') 
-					or (t.id = s.away and g.special_case = 'H_SOL')
-					or (t.id = s.home and g.special_case = 'A_FOR')
-					or (t.id = s.away and g.special_case = 'H_FOR')) as 'W', 
-			(select count(*) from game as g 
-				join schedule as s on g.id = s.id 
-				where (t.id = s.home and g.home_score < g. away_score) 
-					or (t.id = s.away and g.home_score > g. away_score)
-					or (t.id = s.home and g.special_case = 'H_FOR')
-					or (t.id = s.away and g.special_case = 'A_FOR')) as 'L', 
-			(select count(*) from game as g 
-				join schedule as s on g.id = s.id 
-				where (t.id = s.away and g.special_case = 'A_SOL') 
-					or (t.id = s.home and g.special_case = 'H_SOL')) as 'SOL', 
-			((select count(*) from game as g 
-				join schedule as s on g.id = s.id 
-				where (t.id = s.home and g.home_score > g. away_score) 
-				or (t.id = s.away and g.home_score < g. away_score) 
-				or (t.id = s.home and g.special_case = 'A_SOL') 
-				or (t.id = s.away and g.special_case = 'H_SOL')
-				or (t.id = s.home and g.special_case = 'A_FOR')
-				or (t.id = s.away and g.special_case = 'H_FOR'))*2) + 
-					(select count(*) from game as g 
-						join schedule as s on g.id = s.id 
-						where (t.id = s.away and g.special_case = 'A_SOL') 
-							or (t.id = s.home and g.special_case = 'H_SOL')) as 'Pts',
-			(select sum(home_score) from game g
-			    join schedule s on g.id = s.id
-			    where t.id = s.home) +
-			(select sum(away_score) from game g
-			    join schedule s on g.id = s.id
-			    where t.id = s.away) as 'GF',
-			(select sum(away_score) from game g
-			    join schedule s on g.id = s.id
-			    where t.id = s.home) +
-			(select sum(home_score) from game g
-			    join schedule s on g.id = s.id
-			    where t.id = s.away) as 'GA'
-			from team as t 
-			where season = 1 
-			order by 6 desc, 3 desc, 4 desc, 1";
+	$query = "SELECT per.first, 
+				per.last, 
+				ts.goals, 
+				ts.assists, 
+				(ts.goals + ts.assists) AS points, 
+				ts.pen_min
+			FROM temp_stats ts
+			JOIN player p 
+				ON ts.player_id = p.id
+			JOIN person per 
+				ON p.person = per.id
+			WHERE p.team = 1
+			ORDER BY per.last, per.first";
 	$result = mysqli_query($connection, $query) or die("Query failed");
 	while ($row = mysqli_fetch_assoc($result)) {
-		$team = $row['name'];
-		$games = $row['GP'];
-		$wins = $row['W'];
-		$losses = $row['L'];
-		$sol = $row['SOL'];
-		$points = $row['Pts'];
-		$gf = $row['GF'];
-		$ga = $row['GA'];
+		$first = $row['first'];
+		$last = $row['last'];
+		$goals = $row['goals'];
+		$assists = $row['assists'];
+		$points = $row['points'];
+		$pen_min = $row['pen_min'];
 		echo "<tr><td align=left><strong>";
-		echo htmlentities($team);
+		echo htmlentities($first);
+		echo "</strong></td><td align=left><strong>";
+		echo htmlentities($last);
 		echo "</strong></td><td align=center>";
-		echo htmlentities($games);
+		echo htmlentities($goals);
 		echo "</td><td align=center>";
-		echo htmlentities($wins);
-		echo "</td><td align=center>";
-		echo htmlentities($losses);
-		echo "</td><td align=center>";
-		echo htmlentities($sol);
+		echo htmlentities($assists);
 		echo "</td><td align=center><strong>";
 		echo htmlentities($points);
 		echo "</strong></td><td align=center>";
-		echo htmlentities($gf);
-		echo "</td><td align=center>";
-		echo htmlentities($ga);
+		echo htmlentities($pen_min);
 		echo "</td></tr>";
 	}
 	mysqli_free_result($result);

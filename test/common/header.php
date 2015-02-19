@@ -16,7 +16,7 @@ echo '<div id="logo">
 								<a href="standings.php">Standings</a>
 							</li>
 							<li>
-								<a href="#">Stats</a>
+								<a href="stats.php">Stats</a>
 							</li>
 							<li class="last">
 								<a href="#">Contact</a>

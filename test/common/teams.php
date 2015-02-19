@@ -4,28 +4,28 @@ echo '<h3>
 		</h3>
 		<ul class="linkedList">
 			<li class="first">
-				<a href="#">Alien Hockey</a>
+				<a href="tm_alien.php">Alien Hockey</a>
 			</li>
 			<li>
-				<a href="#">Flying Moose Knuckles</a>
+				<a href="tm_flyingmoose.php">Flying Moose Knuckles</a>
 			</li>
 			<li>
-				<a href="#">Cup O Kryptonite</a>
+				<a href="tm_kryptonite.php">Cup O Kryptonite</a>
 			</li>
 			<li>
-				<a href="#">Forklifts of DM/Kyles Bikes</a>
+				<a href="tm_fodmkb.php">Forklifts of DM/Kyles Bikes</a>
 			</li>
 			<li>
-				<a href="#">Ichi Bikes</a>
+				<a href="tm_ichibike.php">Ichi Bikes</a>
 			</li>
 			<li>
-				<a href="redalert.php">Red Alert</a>
+				<a href="tm_redalert.php">Red Alert</a>
 			</li>
 			<li>
-				<a href="#">Rink Rats</a>
+				<a href="tm_rinkrats.php">Rink Rats</a>
 			</li>
 			<li class="last">
-				<a href="#">Victors</a>
+				<a href="tm_victors.php">Victors</a>
 			</li>
 		</ul>
 		<h3>

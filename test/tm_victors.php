@@ -16,7 +16,7 @@
 		<meta name="keywords" content="" />
 		<meta name="description" content="" />
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<title>Des Moines Adult Hockey - Schedule</title>
+		<title>Des Moines Adult Hockey - Victors</title>
 		<link href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" type="text/css" href="common/style.css" />
 	</head>
@@ -60,7 +60,7 @@
 					<div id="content">
 						<div id="box1">
 
-<h1>Red Alert</h1>
+<h1>Victors</h1>
 <hr />
 <br />
 <table id="standings" align="center" width="90%">
@@ -89,7 +89,7 @@
 				ON ts.player_id = p.id
 			JOIN person per 
 				ON p.person = per.id
-			WHERE p.team = 1
+			WHERE p.team = 7
 			ORDER BY per.last, per.first";
 	$result = mysqli_query($connection, $query) or die("Query failed");
 	while ($row = mysqli_fetch_assoc($result)) {

@@ -1,0 +1,81 @@
+//******** TOP PENALTY MINUTES **********//
+SELECT per.first, 
+	per.last, 
+	tm.name, 
+	ts.goals, 
+	ts.assists, 
+	(ts.goals + ts.assists) AS points, 
+	ts.pen_min
+FROM temp_stats ts
+JOIN player p 
+	ON ts.player_id = p.id
+JOIN person per 
+	ON p.person = per.id
+JOIN team tm 
+	ON p.team = tm.id
+ORDER BY ts.pen_min DESC
+
+//******** TEAM STATS  **********//
+SELECT per.first, 
+	per.last, 
+	ts.goals, 
+	ts.assists, 
+	(ts.goals + ts.assists) AS points, 
+	ts.pen_min
+FROM temp_stats ts
+JOIN player p 
+	ON ts.player_id = p.id
+JOIN person per 
+	ON p.person = per.id
+WHERE p.team = 1
+ORDER BY per.last, per.first
+
+//******** TOP 10 SCORERS  **********//
+SELECT 
+	per.first, 
+	per.last, 
+	tm.name, 
+	ts.goals, 
+	ts.assists, 
+	(ts.goals + ts.assists) AS points,
+	ts.pen_min
+FROM temp_stats ts
+JOIN player p ON ts.player_id = p.id
+JOIN person per ON p.person = per.id
+JOIN team tm ON p.team = tm.id
+ORDER BY points DESC , ts.goals DESC , per.last
+LIMIT 10
+
+//******** GAMES PLAYED BY TEAM  **********//
+SELECT t.name, t.id, COUNT( * ) AS gp
+FROM team t
+JOIN schedule s ON t.id = s.home
+OR t.id = s.away
+JOIN game g ON s.id = g.id
+WHERE g.special_case IS NOT NULL 
+GROUP BY t.name, t.id
+
+//******** GOON LIST  **********//
+SELECT per.first, 
+	per.last, 
+	tm.name, 
+	ts.pen_min
+FROM temp_stats ts
+JOIN player p 
+	ON ts.player_id = p.id
+JOIN person per 
+	ON p.person = per.id
+JOIN team tm 
+	ON p.team = tm.id
+JOIN (SELECT t.name, t.id, COUNT( * ) AS gp
+	FROM team t
+	JOIN schedule s 
+		ON t.id = s.home 
+		OR t.id = s.away
+	JOIN game g 
+		ON s.id = g.id
+	WHERE g.special_case IS NOT NULL 
+	GROUP BY t.name, t.id) AS gp 
+	ON p.team = gp.id
+WHERE ts.pen_min >= gp.gp
+ORDER BY ts.pen_min DESC

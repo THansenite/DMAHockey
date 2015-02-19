@@ -1,7 +1,7 @@
 <?php
 echo '<div id="logo">
 						<h1>
-							<a href="#">Des Moines Adult Hockey</a>
+							<a href="index.php">Des Moines Adult Hockey</a>
 						</h1>
 					</div>
 					<div id="nav">

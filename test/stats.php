@@ -125,35 +125,38 @@
 		<th align=left>First</th>
 		<th align=left>Last</th>
 		<th align=left>Team</th>
-		<th>Penalty Minutes</th>
+		<th>PM</th>
+		<th>PM/G</th>
 	</tr>
 </thead>
 <tbody>
 <?php
 	include ("common/db_setup.php");
 	$connection = mysqli_connect($server, $username, $password, $database) or die ("Connection failed");
-	$query = "SELECT per.first, per.last, tm.name, ts.pen_min
-				FROM temp_stats ts
-				JOIN player p ON ts.player_id = p.id
-				JOIN person per ON p.person = per.id
-				JOIN team tm ON p.team = tm.id
-				JOIN (
-				SELECT t.name, t.id, COUNT( * ) AS gp
-				FROM team t
-				JOIN schedule s ON t.id = s.home
-				OR t.id = s.away
-				JOIN game g ON s.id = g.id
-				WHERE g.special_case IS NOT NULL 
-				GROUP BY t.name, t.id
-				) AS gp ON p.team = gp.id
-				WHERE ts.pen_min > gp.gp
-				ORDER BY ts.pen_min DESC";
+	$query = "SELECT per.first, per.last, tm.name, ts.pen_min, ROUND( ts.pen_min / gp.gp, 2 ) AS  'pm_per_game'
+FROM temp_stats ts
+JOIN player p ON ts.player_id = p.id
+JOIN person per ON p.person = per.id
+JOIN team tm ON p.team = tm.id
+JOIN (
+
+SELECT t.name, t.id, COUNT( * ) AS gp
+FROM team t
+JOIN schedule s ON t.id = s.home
+OR t.id = s.away
+JOIN game g ON s.id = g.id
+WHERE g.special_case IS NOT NULL 
+GROUP BY t.name, t.id
+) AS gp ON p.team = gp.id
+WHERE ts.pen_min > gp.gp
+ORDER BY ts.pen_min DESC";
 	$result = mysqli_query($connection, $query) or die("Query failed");
 	while ($row = mysqli_fetch_assoc($result)) {
 		$first = $row['first'];
 		$last = $row['last'];
 		$team = $row['name'];
 		$pen_min = $row['pen_min'];
+		$pm_per_game = $row['pm_per_game'];
 		echo "<tr><td align=left><strong>";
 		echo htmlentities($first);
 		echo "</strong></td><td align=left><strong>";
@@ -162,7 +165,9 @@
 		echo htmlentities($team);
 		echo "</td><td align=center><strong>";
 		echo htmlentities($pen_min);
-		echo "</strong></td></tr>";
+		echo "</strong></td><td align=center>";
+		echo htmlentities($pm_per_game);
+		echo "</td></tr>";
 	}
 	mysqli_free_result($result);
 	mysqli_close($connection);
@@ -190,22 +195,38 @@
 <?php
 	include ("common/db_setup.php");
 	$connection = mysqli_connect($server, $username, $password, $database) or die ("Connection failed");
-	$query = "";
+	$query = "SELECT per.first, per.last, tm.name, ROUND( tg.games, 1 ) AS games, tg.goals, ROUND( (
+				tg.goals / tg.games
+				), 2 ) AS  'gaa', tg.shutouts
+				FROM temp_goalie tg
+				JOIN player p ON tg.player_id = p.id
+				JOIN person per ON p.person = per.id
+				JOIN team tm ON p.team = tm.id
+				ORDER BY  'gaa',  'games'";
 	$result = mysqli_query($connection, $query) or die("Query failed");
 	while ($row = mysqli_fetch_assoc($result)) {
 		$first = $row['first'];
 		$last = $row['last'];
 		$team = $row['name'];
-		$pen_min = $row['pen_min'];
+		$games = $row['games'];
+		$goals = $row['goals'];
+		$gaa = $row['gaa'];
+		$shutouts = $row['shutouts'];
 		echo "<tr><td align=left><strong>";
 		echo htmlentities($first);
 		echo "</strong></td><td align=left><strong>";
 		echo htmlentities($last);
 		echo "</strong></td><td align=left>";
 		echo htmlentities($team);
+		echo "</td><td align=center>";
+		echo htmlentities($games);
+		echo "</td><td align=center>";
+		echo htmlentities($goals);
 		echo "</td><td align=center><strong>";
-		echo htmlentities($pen_min);
-		echo "</strong></td></tr>";
+		echo htmlentities($gaa);
+		echo "</strong></td><td align=center>";
+		echo htmlentities($shutouts);
+		echo "</td></tr>";
 	}
 	mysqli_free_result($result);
 	mysqli_close($connection);

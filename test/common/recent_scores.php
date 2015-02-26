@@ -23,7 +23,7 @@ echo '
 			<tr><td>2/22</td><td>10:45PM</tr>
 			<tr class="loser"><td>Red Alert</td><td>7</td></tr>
 			<tr class="winner"><td>Ichi Bike</td><td>7</td></tr>
-			<tr><td colspan = 2><em>Shootout<em></td></tr>
+			<tr><td colspan = 2><em>SHOOTOUT<em></td></tr>
 		<tr><td colspan=2><hr /></td></tr>
 		</table>
 

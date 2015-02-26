@@ -321,13 +321,16 @@ ul {
 	padding: 0;
 }
 
+
+
 #recent_games {
 	width: 245px;
 	font-style: italic;
+	font-size: 0.9em;
 }
 
 #recent_games .winner, .loser {
-	font-size: 1.2em;
+	font-size: 1.1em;
 	font-weight: bold;
 	font-style: normal;
 }
@@ -342,7 +345,7 @@ ul {
 }
 
 #upcoming_games .team {
-	font-size: 1.2em;
+	font-size: 1.1em;
 	font-weight: bold;
 	font-style: normal;	
 	color: #ffffff;

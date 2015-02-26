@@ -1,0 +1,59 @@
+[33mcommit bd5a1b2107a4547f16b89767c09c6e0eb6ca89f5[m
+Author: unknown <hansenan@US-DDTGYZ1.phibred.com>
+Date:   Mon Feb 23 17:03:16 2015 -0600
+
+    Worked on mock-up of played and upcoming games
+
+[33mcommit c754473e43db54ac7d3efc5371552de174e56433[m
+Author: Tonys Work Laptop <THansenite@gmail.com>
+Date:   Thu Feb 19 16:54:54 2015 -0600
+
+    added goalie stats to stats page and tweaked the formatting of the other stats
+
+[33mcommit bd2a33a17994bf8818a0c1e38b3368fb1d81b754[m
+Author: Tonys Work Laptop <THansenite@gmail.com>
+Date:   Thu Feb 19 15:41:11 2015 -0600
+
+    added link back to home by clicking on banner text
+
+[33mcommit dcb016e38611761f344fde7f345bcbafc435e873[m
+Author: Tonys Work Laptop <THansenite@gmail.com>
+Date:   Thu Feb 19 15:35:22 2015 -0600
+
+    added stats page to menu bar and made stats page.  currently have top scorers and goon list
+
+[33mcommit 6f1af0b3aff3be1ed22a7c7fec41b65a84bd68dd[m
+Author: Tonys Work Laptop <THansenite@gmail.com>
+Date:   Thu Feb 19 15:01:43 2015 -0600
+
+    added pages for all teams and gave a tm_ prefix to help organize
+
+[33mcommit 6d83b939c3ce84bf7f63f8d92fed0223da9a8a38[m
+Author: Tonys Work Laptop <THansenite@gmail.com>
+Date:   Thu Feb 19 14:50:26 2015 -0600
+
+    added teams include file to project so it is easier to modify team hyperlinks
+
+[33mcommit 2f5f2594b729a960378dc80211a6686ed2388a53[m
+Author: Tonys Work Laptop <THansenite@gmail.com>
+Date:   Thu Feb 19 14:38:18 2015 -0600
+
+    Added team stats for Red Alert
+
+[33mcommit 4071148037cdfbe6031225d443f503a869f890be[m
+Author: Tonys Work Laptop <THansenite@gmail.com>
+Date:   Thu Feb 19 14:24:24 2015 -0600
+
+    removed old DMAHockeyProto folder and added test team page
+
+[33mcommit dd211263725e0b69c300b996a98bc7900b5f0f06[m
+Author: Tonys Work Laptop <THansenite@gmail.com>
+Date:   Thu Feb 19 13:45:07 2015 -0600
+
+    Added gitignore file to project so db_setup files will be ignored
+
+[33mcommit 828a0c7c40cc855b0a6ca6a0e962f1f79863efa4[m
+Author: THansenite Work Laptop <THansenite@gmail.com>
+Date:   Thu Feb 19 13:37:25 2015 -0600
+
+    Added test folder to project with prototype site

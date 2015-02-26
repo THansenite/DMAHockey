@@ -236,6 +236,7 @@ ul {
 
 #main ul.imageList {
 	list-style: none;
+	text-align: left;
 }
 
 #main ul.imageList li {

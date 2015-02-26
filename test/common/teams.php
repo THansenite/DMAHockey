@@ -28,6 +28,8 @@ echo '<h3>
 				<a href="tm_victors.php">Victors</a>
 			</li>
 		</ul>
+
+		<!--
 		<h3>
 			Aliquam etiam adipiscing
 		</h3>
@@ -36,5 +38,7 @@ echo '<h3>
 			sed mattis. Turpis placerat lectus quis consequat tincidunt felis. Fermentum et purus mollis posuere
 			aliquam amet commodo sed blandit curae lorem ipsum nascetur congue in sed diam nascetur arcu. Arcu sed
 			consectetur fringilla amet tellus montes.
-		</p>';
+		</p>
+		-->
+		';
 ?>

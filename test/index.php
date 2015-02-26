@@ -45,46 +45,45 @@
 						</div>
 						<div id="box2">
 							<h3>
-								Tellus porta gravida iaculis
+								League News
 							</h3>
 							<ul class="imageList">
 								<li class="first">
-									<img class="left" src="images/pic2.jpg" width="64" height="64" alt="" />
-									<p>Aliquet faucibus et curae volutpat amet consequat venenatis in volutpat.</p>
+									<!--<img class="left" src="images/pic2.jpg" width="64" height="64" alt="" />-->
+									<p>The new Stats page shows the top players in a few different categories.  See if you are on the lists.</p>
 								</li>
 								<li>
-									<img class="left" src="images/pic1.jpg" width="64" height="64" alt="" />
-									<p>Curabitur donec sed orci vulputate primis pulvinar sodales sapien.</p>
+									<!--<img class="left" src="images/pic2.jpg" width="64" height="64" alt="" />-->
+									<p>Team pages show updated rosters and stats for each player on the team.</p>
 								</li>
 								<li class="last">
-									<img class="left" src="images/pic2.jpg" width="64" height="64" alt="" />
-									<p>Nullam sapien duis aenean posuere duis sed semper nulla vestibulum.</p>
+									<!--<img class="left" src="images/pic2.jpg" width="64" height="64" alt="" />-->
+									<p>Check back frequently as more functionality will be added to the site in the coming weeks.</p>
 								</li>
 							</ul>
 						</div>
 						<div id="box3">
 							<h3>
-								Mauris faucibus
+								Important Links
 							</h3>
 							<p>
-								Hendrerit purus et gravida. Eleifend primis sodales faucibus tempor.
+								Below are some helpful and frequently needed links for the league:
 							</p>
 							<ul class="linkedList">
 								<li class="first">
-									<a href="#">Posuere mus ac felis veroeros</a>
+									<a href="https://sites.google.com/site/abchockeydsm/2014-2015-season-registration" target="_blank">2014-15 League Registration</a>
 								</li>
-								<li>
-									<a href="#">Eget fusce aliquam dolore ligula</a>
-								</li>
+
+								<!--
 								<li>
 									<a href="#">Vulputate pellentesque faucibus</a>
 								</li>
-								<li>
-									<a href="#">Ridiculus pellentesque et aliquam</a>
-								</li>
+								-->
+
 								<li class="last">
-									<a href="#">Montes est praesent laoreet</a>
+									<a href="other/discipline-flowchart.pdf" target="_blank">Revised Discipline Flowchart</a>
 								</li>
+							
 							</ul>
 						</div>
 						<br class="clear" />
@@ -92,38 +91,7 @@
 					<br class="clear" />
 				</div>
 				<div id="footer">
-					<div id="footerContent">
-						<h3>
-							Fringilla integer morbi
-						</h3>
-						<p>
-							Duis rhoncus aenean fusce ornare. Dolor velit augue proin pellentesque. Semper purus orci vivamus. 
-							Tempus nullam praesent sem ipsum. Sapien nibh aliquam convallis vestibulum. Lorem elit sapien duis 
-							et cras. Nunc feugiat sed praesent amet lobortis semper tellus. Lobortis sodales nisi feugiat. 
-							Cubilia sollicitudin metus ut lectus ante. Aliquam condimentum faucibus velit, sit amet molestie 
-							dolor euismod non. Integer nec sapien turpis. Quisque volutpat aliquet tortor sit amet laoreet. 
-							Phasellus posuere rutrum lacus, id vestibulum metus dictum id. Curabitur dictum ullamcorper 
-							bibendum. Phasellus quam justo. Sed vitae placerat dolor. Vivamus ultrices congue auctor. 
-							Pellentesque sit amet posuere libero.
-						</p>
-					</div>
-					<div id="footerSidebar">
-						<h3>
-							Consequat metus
-						</h3>
-						<ul class="linkedList">
-							<li class="first">
-								<a href="#">Vestibulum lacinia nisl dolore</a>
-							</li>
-							<li>
-								<a href="#">Tristique amet sodales aliquam</a>
-							</li>
-							<li class="last">
-								<a href="#">Tellus et volutpat sed etiam</a>
-							</li>
-						</ul>
-					</div>
-					<br class="clear" />
+					<?php include ("common/footer.php");?>
 				</div>
 			</div>
 			<div id="copyright">

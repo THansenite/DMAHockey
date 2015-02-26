@@ -34,26 +34,22 @@ echo '
 
 		<table id="upcoming_games">
 		<tr><td class="divider" colspan=2><hr /></td></tr>
-			<tr><td class="team">Ichi Bike</td><td><em>2/22<em></td></tr>
-			<tr><td class="team">Alien</td><td><em>6:45PM<em></td>
+			<tr><td><em>2/22<em></td><td><em>6:45PM<em></td></tr>
+			<tr><td class="team" colspan=2>Ichi Bike vs. Alien</td>
 		</tr>
-		<table id="upcoming_games">
 		<tr><td class="divider" colspan=2><hr /></td></tr>
-			<tr><td class="team">Kryptonite</td><td><em>2/22<em></td></tr>
-			<tr><td class="team">Rink Rats</td><td><em>8:05PM<em></td>
+			<tr><td><em>2/22<em></td><td><em>8:05PM<em></td></tr>
+			<tr><td class="team" colspan=2>Kryptonite vs. Rink Rats</td>
 		</tr>
-		<table id="upcoming_games">
 		<tr><td class="divider" colspan=2><hr /></td></tr>
-			<tr><td class="team">Flying Moose</td><td><em>2/22<em></td></tr>
-			<tr><td class="team">Victors</td><td><em>9:25PM<em></td>
+			<tr><td><em>2/22<em></td><td><em>9:25PM<em></td></tr>
+			<tr><td class="team" colspan=2>Flying Moose vs. Victors</td>
 		</tr>
-		<table id="upcoming_games">
 		<tr><td class="divider" colspan=2><hr /></td></tr>
-			<tr><td class="team">Red Alert</td><td><em>2/22<em></td></tr>
-			<tr><td class="team">FoDM/KB</td><td><em>10:45PM<em></td>
+			<tr><td><em>2/22<em></td><td><em>10:45PM<em></td></tr>
+			<tr><td class="team" colspan=2>FoDM/KB vs. Red Alert</td>
 			<tr><td class="divider" colspan=2><hr /></td></tr>
 		</tr>
-
 		</table>
 ';
 ?>

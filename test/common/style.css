@@ -323,10 +323,19 @@ ul {
 
 
 
-#recent_games {
+#recent_games, #upcoming_games{
 	width: 245px;
 	font-style: italic;
 	font-size: 0.9em;
+}
+
+#recent_games td, #upcoming_games td {
+	padding-left: 30px;
+	width: 50%;
+}
+
+#recent_games td.divider, #upcoming_games td.divider {
+	padding-left: 0px;
 }
 
 #recent_games .winner, .loser {
@@ -339,16 +348,17 @@ ul {
 	color: #ffffff;
 }
 
+/*
 #upcoming_games {
 	width: 245px;
 	font-style: italic;
 }
+*/
 
 #upcoming_games .team {
 	font-size: 1.1em;
 	font-weight: bold;
 	font-style: normal;	
-	color: #ffffff;
 }
 
 

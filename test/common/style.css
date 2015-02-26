@@ -8,6 +8,8 @@
 	Version    : 1.0
 	Released   : 20130222
 	
+https.proxy=jhproxy1.phibred.com:8080
+http.proxy=jhproxy1.phibred.com:
 */
 
 * {

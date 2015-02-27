@@ -36,60 +36,59 @@
 					</div>
 					<div id="content">
 						<div id="box1">
-							<h2>
-								Welcome to Des Moines Adult Hockey
-							</h2>
-							<img class="left" src="images/pic1.jpg" width="150" height="190" alt="" />
-							<p>
-								Welcome to the new Des Moines Adult Hockey page.  Everyone has been asking for more information for quite a while, so here it is.
-							</p>
-							<p>
-								You'll recognize the <a href="standings.php">standings</a> and <a href="schedule.php">schedule</a> pages, but the new <a href="stats.php">stats</a> pages and team rosters and stats should give you more locker room fodder when chatting with teammates.
-							</p>
-						</div>
-						<div id="box2">
 							<h3>
-								League News
+								Tellus porta gravida iaculis
 							</h3>
 							<ul class="imageList">
 								<li class="first">
-									<!--<img class="left" src="images/pic2.jpg" width="64" height="64" alt="" />-->
-									<p>The new Stats page shows the top players in a few different categories.  See if you are on the lists.</p>
+									<img class="left" src="images/pic2.jpg" width="64" height="64" alt="" />
+									<p>Aliquet faucibus et curae volutpat amet consequat venenatis in volutpat.</p>
 								</li>
 								<li>
-									<!--<img class="left" src="images/pic2.jpg" width="64" height="64" alt="" />-->
-									<p>Team pages show updated rosters and stats for each player on the team.</p>
+									<img class="left" src="images/pic1.jpg" width="64" height="64" alt="" />
+									<p>Curabitur donec sed orci vulputate primis pulvinar sodales sapien.</p>
 								</li>
 								<li class="last">
-									<!--<img class="left" src="images/pic2.jpg" width="64" height="64" alt="" />-->
-									<p>Check back frequently as more functionality will be added to the site in the coming weeks.</p>
+									<img class="left" src="images/pic2.jpg" width="64" height="64" alt="" />
+									<p>Nullam sapien duis aenean posuere duis sed semper nulla vestibulum.</p>
 								</li>
 							</ul>
 						</div>
-						<div id="box3">
-							<h3>
-								Important Links
-							</h3>
-							<p>
-								Below are some helpful and frequently needed links for the league:
-							</p>
-							<ul class="linkedList">
-								<li class="first">
-									<a href="https://sites.google.com/site/abchockeydsm/2014-2015-season-registration" target="_blank">2014-15 League Registration</a>
-								</li>
+						<div id="box1">
+							<h2>
+								Contact us
+							</h2>
 
-								<!--
-								<li>
-									<a href="#">Vulputate pellentesque faucibus</a>
-								</li>
-								-->
-
-								<li class="last">
-									<a href="other/discipline-flowchart.pdf" target="_blank">Revised Discipline Flowchart</a>
-								</li>
 							
+							
+							<ul class="imageList">
+								<li class="first">
+									<img class="left" src="images/pic2.jpg" width="64" height="64" alt="" />
+									<p>Aliquet faucibus et curae volutpat amet consequat venenatis in volutpat.</p>
+								</li>
+								<li>
+									<img class="left" src="images/pic1.jpg" width="64" height="64" alt="" />
+									<p>Curabitur donec sed orci vulputate primis pulvinar sodales sapien.</p>
+								</li>
+								<li class="last">
+									<img class="left" src="images/pic2.jpg" width="64" height="64" alt="" />
+									<p>Nullam sapien duis aenean posuere duis sed semper nulla vestibulum.</p>
+								</li>
 							</ul>
+
+							<ul class="imageList">
+								<li class="first">
+									<img class="left" src="images/pic2.jpg" width="64" height="64" alt="" />
+									<p>For questions and comments about the <u>league</u>, email: <a href="mailto:abchockeydsm@gmail.com">abchockeydsm@gmail.com</a></p>
+								</li>
+								<li class="last">
+									<img class="left" src="images/pic2.jpg" width="64" height="64" alt="" />
+									<p>For questions and comments about <u>this website</u>, email: <a href="mailto:DMAHockey@gmail.com">DMAHockey@gmail.com</a></p>
+								</li>
+							</ul>
+
 						</div>
+
 						<br class="clear" />
 					</div>
 					<br class="clear" />

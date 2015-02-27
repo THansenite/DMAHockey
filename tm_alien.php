@@ -16,7 +16,7 @@
 		<meta name="keywords" content="" />
 		<meta name="description" content="" />
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<title>Des Moines Adult Hockey - Schedule</title>
+		<title>Des Moines Adult Hockey - Alien Hockey</title>
 		<link href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet" type="text/css" />
 		<link rel="stylesheet" type="text/css" href="common/style.css" />
 	</head>
@@ -25,7 +25,7 @@
 		<div id="bg">
 			<div id="outer">
 				<div id="header">
-				<?php include ("common/header.php");?>
+					<?php include ("common/header.php");?>
 				</div>
 				<div id="main">
 					<div id="sidebar1">
@@ -36,77 +36,58 @@
 					</div>
 					<div id="content">
 						<div id="box1">
-<h1>2014-15 Schedule</h1>
+
+<h1>Alien Hockey</h1>
 <hr />
 <br />
-<table id="schedule" align="center" width="95%">
-
+<table id="standings" align="center" width="90%">
 <thead>
 	<tr>
-		<th>Date</th>
-		<th>Time</th>
-		<th>Home Team</th>
-		<th>Away Team</th>
-		<th>Score</th>
+		<th align="left">First</th>
+		<th align="left">Last</th>
+		<th>Goals</th>
+		<th>Assists</th>
+		<th>Points</th>
+		<th>PM</th>
 	</tr>
 </thead>
 <tbody>
 <?php
 	include ("common/db_setup.php");
 	$connection = mysqli_connect($server, $username, $password, $database) or die ("Connection failed");
-	$query = "select date_format(sched.date,'%c/%e/%y') as 'date', time_format(sched.time,'%h:%i %p') as 'time', team1.name as 'home', team2.name as 'away', g.special_case as 'outcome', g.home_score as 'home_score', g.away_score as 'away_score' from schedule sched join team team1 on sched.home = team1.id join team team2 on sched.away = team2.id left join game g on g.id = sched.id";
+	$query = "SELECT per.first, 
+				per.last, 
+				ts.goals, 
+				ts.assists, 
+				(ts.goals + ts.assists) AS points, 
+				ts.pen_min
+			FROM temp_stats ts
+			JOIN player p 
+				ON ts.player_id = p.id
+			JOIN person per 
+				ON p.person = per.id
+			WHERE p.team = 2
+			ORDER BY per.last, per.first";
 	$result = mysqli_query($connection, $query) or die("Query failed");
 	while ($row = mysqli_fetch_assoc($result)) {
-		$date = $row['date'];
-		$time = $row['time'];
-		$home = $row['home'];
-		$away = $row['away'];
-		$outcome = $row['outcome'];
-		$home_score = $row['home_score'];
-		$away_score = $row['away_score'];
-		echo "<tr><td align=center>";
-		echo htmlentities($date);
+		$first = $row['first'];
+		$last = $row['last'];
+		$goals = $row['goals'];
+		$assists = $row['assists'];
+		$points = $row['points'];
+		$pen_min = $row['pen_min'];
+		echo "<tr><td align=left><strong>";
+		echo htmlentities($first);
+		echo "</strong></td><td align=left><strong>";
+		echo htmlentities($last);
+		echo "</strong></td><td align=center>";
+		echo htmlentities($goals);
 		echo "</td><td align=center>";
-		echo htmlentities($time);
-		echo "</td><td align=center>";
-		if ($home_score > $away_score || $outcome == 'A_SOL' || $outcome == 'A_FOR') {
-			echo "<strong>";
-			echo htmlentities($home);
-			echo "</strong>";
-		}
-		else
-		{
-			echo htmlentities($home);
-		}
-		echo "</td><td align=center>";
-		if ($home_score < $away_score || $outcome == 'H_SOL' || $outcome == 'H_FOR') {
-			echo "<strong>";
-			echo htmlentities($away);
-			echo "</strong>";
-		}
-		else
-		{
-			echo htmlentities($away);
-		}
-		echo "</td><td align=center>";
-		if (is_null($outcome))
-		{
-			echo "";
-		}
-		else
-		{
-			echo htmlentities($home_score);
-			echo " - ";
-			echo htmlentities($away_score);
-			if ($outcome == 'H_SOL' || $outcome == 'A_SOL') 
-			{
-				echo " (SO)";
-			}
-			if ($outcome == 'H_FOR' || $outcome == 'A_FOR') 
-			{
-				echo " (F)";
-			}
-		}
+		echo htmlentities($assists);
+		echo "</td><td align=center><strong>";
+		echo htmlentities($points);
+		echo "</strong></td><td align=center>";
+		echo htmlentities($pen_min);
 		echo "</td></tr>";
 	}
 	mysqli_free_result($result);

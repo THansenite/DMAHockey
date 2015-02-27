@@ -1,7 +1,9 @@
 <?php
 echo '<div id="logo">
 						<h1>
-							<a href="index.php">Des Moines Adult Hockey</a>
+							<a href="index.php">
+							<img class="left" src="images/ABC_Logo.png" width="127" height="120" alt="ABC_Logo" />
+							Des Moines Adult Hockey</a>
 						</h1>
 					</div>
 					<div id="nav">

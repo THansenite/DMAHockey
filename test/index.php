@@ -21,6 +21,7 @@
 		<link rel="stylesheet" type="text/css" href="common/style.css" />
 	</head>
 	<body>
+	<?php include ("common/tracking.php");?>
 		<div id="bg">
 			<div id="outer">
 				<div id="header">
@@ -40,7 +41,7 @@
 							</h2>
 							<img class="left" src="images/pic1.jpg" width="150" height="190" alt="" />
 							<p>
-								Welcome to the new Des Moines Adult Hockey page.  Everyone has been asking for more information for quite a while, so here it is.  You'll recognize the <a href="standings.php">standings</a> and <a href="schedule.php">schedule</a> pages, but the new <a href="stats.php">stats</a> pages and team rosters and stats should give you more locker room fodder when chatting with teammates.  Please use the contact page to send me any questions, comments, or suggestions on this new site.
+								Welcome to the new Des Moines Adult Hockey page.  Everyone has been asking for more information for quite a while, so here it is.  You'll recognize the <a href="standings.php">standings</a> and <a href="schedule.php">schedule</a> pages, but the new <a href="stats.php">stats</a> pages and team rosters and stats should give you more locker room fodder when chatting with teammates.
 							</p>
 						</div>
 						<div id="box2">

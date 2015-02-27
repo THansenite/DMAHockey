@@ -21,6 +21,7 @@
 		<link rel="stylesheet" type="text/css" href="common/style.css" />
 	</head>
 	<body>
+	<?php include ("common/tracking.php");?>
 		<div id="bg">
 			<div id="outer">
 				<div id="header">

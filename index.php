@@ -78,7 +78,7 @@
 									<a href="https://sites.google.com/site/abchockeydsm/2014-2015-season-registration" target="_blank">2014-15 League Registration</a>
 								</li>
 								<li>
-									<a href="https://sites.google.com/site/abchockeydsm/registraion">March 21st 3-on-3 Tournament</a>
+									<a href="https://sites.google.com/site/abchockeydsm/registraion" target="_blank">March 21st 3-on-3 Tournament</a>
 								</li>
 								<li class="last">
 									<a href="other/discipline-flowchart.pdf" target="_blank">Revised Discipline Flowchart</a>
